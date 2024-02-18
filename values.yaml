@@ -112,3 +112,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# postgresql settings
+global:
+  postgresql:
+    auth:
+      postgresPassword: pass
+      username: user
+      password: pass
+      database: dagonitdb
