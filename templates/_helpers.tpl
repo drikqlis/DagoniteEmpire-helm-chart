@@ -60,3 +60,14 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create image pull secret
+*/}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dagonite-empire-registry-secret
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: {{ template "imagePullSecret" . }}

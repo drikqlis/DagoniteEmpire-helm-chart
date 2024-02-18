@@ -10,9 +10,16 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: dagonite-empire-registry-secret
 nameOverride: ""
 fullnameOverride: ""
+
+imageCredentials:
+  registry: docker.io
+  username: user
+  password: pass
+  email: someone@host.com
 
 serviceAccount:
   # Specifies whether a service account should be created
